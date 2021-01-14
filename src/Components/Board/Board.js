@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Board.css';
+import Card from '../Card/Card';
 
 class Board extends Component {
     render() { 
@@ -7,7 +8,10 @@ class Board extends Component {
         return ( 
             <div className ='board'>
                 {
-                    cards.map((card) => <span>{card}</span>)
+                    cards.map((card) => 
+                    <Card>
+
+                    </Card>)
                 }
             </div>
          );

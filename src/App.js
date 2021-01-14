@@ -1,5 +1,5 @@
-import Header from './Header';
-import Board from "./Board";
+import Header from './Components/Header/Header';
+import Board from './Components/Board/Board';
 import './App.css';
 
 function App() {
