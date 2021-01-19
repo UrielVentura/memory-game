@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import './Card.css'
-import Flipcard from '@kennethormandy/react-flipcard'
+import { FlexyFlipCard } from 'flexy-flipcards'
 
 class Card extends Component {
 
     render() { 
         return (
             <div className='card'>
-                <Flipcard>
-                    <div className = 'cover'>
-
+                <FlexyFlipCard>
+                     <div className = 'cover' ref='flipper'>
                     </div>
                     <div className =  'content'>
                         <i className={`fa ${this.props.icon} fa-5x`}></i>
                     </div>
-                </Flipcard>
-                
+                </FlexyFlipCard>                
             </div>
         );
     }
