@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './Card.css'
-import FlipCard from 'react-flipcard';
+import Flipcard from '@kennethormandy/react-flipcard'
 
 class Card extends Component {
 
     render() { 
         return (
             <div className='card'>
-                <FlipCard>
+                <Flipcard>
                     <div className = 'cover'>
 
                     </div>
                     <div className =  'content'>
-                        <i className={`fa ${this.props.icon} fa-5s`}></i>
+                        <i className={`fa ${this.props.icon} fa-5x`}></i>
                     </div>
-                </FlipCard>
+                </Flipcard>
                 
             </div>
         );

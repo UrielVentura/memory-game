@@ -3,7 +3,7 @@ import FontAwesomeClasses from "./fontAwesomeClasses";
 const NUMBER_OF_CARDS = 20;
 
 
-export default () => {
+ const boardConstructor = () => {
     const fontAwesomeClasses =  FontAwesomeClasses();
     let cards = [];
 
@@ -21,3 +21,5 @@ export default () => {
     return shuffle(cards);
 
 };
+
+export default boardConstructor;
