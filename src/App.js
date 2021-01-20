@@ -8,7 +8,9 @@ const getInitialState = () => {
   const deck = boardCOnstructor();
   
     return {
-      deck
+      deck,
+      selectedCouple: [],
+      isComparing: false
     }
 }
 class App extends Component {
@@ -17,6 +19,7 @@ class App extends Component {
     super(props);
     this.state = getInitialState();
   }
+
   render() { 
     return ( 
       <div className="App">
@@ -27,6 +30,20 @@ class App extends Component {
     </div>
      );
   }
+
+  selectCard = (card) => {
+    if (
+      this.state.isComparing || 
+      this.state.selectedCouple.indexOf(card) > -1 ||
+      card.wasGuessed
+      ) {
+      return;
+    }
+
+    /*const*/ 
+  } 
+  
+
 }
  
 export default App;
