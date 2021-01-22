@@ -26,6 +26,8 @@ class App extends Component {
       <Header/>
       <Board
         deck = {this.state.deck}
+        selectedCouple = {this.state.selectedCouple}
+        selectCard = {(card) => this.selectCard(card)}
       />
     </div>
      );
@@ -40,7 +42,10 @@ class App extends Component {
       return;
     }
 
-    /*const*/ 
+    const selectedCouple = [...this.state.selectedCouple,card];
+    this.setState({
+      selectedCouple
+    })
   } 
   
 

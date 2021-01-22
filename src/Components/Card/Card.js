@@ -6,8 +6,11 @@ class Card extends Component {
 
     render() { 
         return (
-            <div className='card'>
-                <FlexyFlipCard>
+            <div className='card' onClick={this.props.selectCard} >
+                <FlexyFlipCard
+                    flipped = {this.props.isComparing || this.wasGuessed}
+                    disabled={true}
+                >
                      <div className = 'cover' ref='flipper'>
                     </div>
                     <div className =  'content'>
