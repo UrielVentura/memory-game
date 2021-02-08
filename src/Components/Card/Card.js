@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import './Card.css'
-import { FlexyFlipCard } from 'flexy-flipcards'
+import FlipCard from 'react-flipcard';
 
 class Card extends Component {
 
     render() { 
         return (
             <div className='card' onClick={this.props.selectCard} >
-                <FlexyFlipCard
-                    flipped = {this.props.isComparing || this.wasGuessed}
-                    disabled={true}
+                <FlipCard
+                    /*flipped = {this.props.isComparing || this.wasGuessed}*/
+                    /*disabled={true}*/
                 >
-                     <div className = 'cover' ref='flipper'>
+                     <div className = 'cover' >
                     </div>
                     <div className =  'content'>
                         <i className={`fa ${this.props.icon} fa-5x`}></i>
                     </div>
-                </FlexyFlipCard>                
+                </FlipCard>                
             </div>
         );
     }

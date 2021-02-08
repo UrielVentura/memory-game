@@ -33,7 +33,7 @@ class App extends Component {
      );
   }
 
-  selectCard = (card) => {
+  selectCard(card) {
     if (
       this.state.isComparing || 
       this.state.selectedCouple.indexOf(card) > -1 ||
@@ -45,8 +45,36 @@ class App extends Component {
     const selectedCouple = [...this.state.selectedCouple,card];
     this.setState({
       selectedCouple
-    })
+    });
+
+    if (selectedCouple.length === 2) {
+      this.compareCouple(selectedCouple);
+    }
   } 
+
+  compareCouple(selectedCouple) {
+    this.setState({isComparing: true});
+
+    setTimeout(() => {
+      const [firstCard,secondCard] = selectedCouple;
+      let deck = this.state.deck;
+
+      if (firstCard.icon === secondCard.icon) {
+        deck = deck.map( (card) => {
+          if (card.icon !== firstCard.icon) {
+            return card;
+          }
+
+          return {...card, wasGuessed:true}
+        });
+      }
+      this.setState({
+        selectedCouple: [],
+        deck,
+        isComparing: false
+      });
+    },1000)
+  }
   
 
 }
